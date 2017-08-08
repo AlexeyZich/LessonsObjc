@@ -12,6 +12,8 @@
 		5F7CB95C1F390248000A2620 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7CB95B1F390248000A2620 /* ViewController.m */; };
 		5F7CB95E1F390248000A2620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F7CB95D1F390248000A2620 /* Assets.xcassets */; };
 		5F7CB9611F390248000A2620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7CB95F1F390248000A2620 /* Main.storyboard */; };
+		5F7CB96A1F390379000A2620 /* TableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7CB9691F390379000A2620 /* TableDataSource.m */; };
+		5F7CB96D1F390876000A2620 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7CB96C1F390876000A2620 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		5F7CB95D1F390248000A2620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F7CB9601F390248000A2620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F7CB9621F390248000A2620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F7CB9681F390379000A2620 /* TableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableDataSource.h; sourceTree = "<group>"; };
+		5F7CB9691F390379000A2620 /* TableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableDataSource.m; sourceTree = "<group>"; };
+		5F7CB96B1F390876000A2620 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		5F7CB96C1F390876000A2620 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,10 @@
 				5F7CB95F1F390248000A2620 /* Main.storyboard */,
 				5F7CB9621F390248000A2620 /* Info.plist */,
 				5F7CB9571F390248000A2620 /* Supporting Files */,
+				5F7CB96B1F390876000A2620 /* Person.h */,
+				5F7CB96C1F390876000A2620 /* Person.m */,
+				5F7CB9681F390379000A2620 /* TableDataSource.h */,
+				5F7CB9691F390379000A2620 /* TableDataSource.m */,
 			);
 			path = TestDataTable;
 			sourceTree = "<group>";
@@ -149,7 +159,9 @@
 			files = (
 				5F7CB95C1F390248000A2620 /* ViewController.m in Sources */,
 				5F7CB9591F390248000A2620 /* main.m in Sources */,
+				5F7CB96D1F390876000A2620 /* Person.m in Sources */,
 				5F7CB9561F390248000A2620 /* AppDelegate.m in Sources */,
+				5F7CB96A1F390379000A2620 /* TableDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

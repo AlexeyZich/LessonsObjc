@@ -7,12 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "Person.h"
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     // Do any additional setup after loading the view.
 }
 
@@ -24,4 +25,31 @@
 }
 
 
+- (IBAction)add:(id)sender {
+    
+    Person *person = [[Person alloc] init];
+    NSString *fullName = [_name stringValue];
+
+    NSArray *names = [fullName componentsSeparatedByString:@" "];
+    
+    NSInteger namesCount = [names count];
+    
+    NSString *name;
+    NSString *surname;
+    
+    if (namesCount >= 2) {
+        name = names[0];
+        surname = names[1];
+    } else if (namesCount == 1) {
+        name = names[0];
+        surname = @"";
+    } else if (namesCount == 0){
+        NSLog(@"Ошибка");
+    }
+
+    [person setName: name];
+    [person setSurname: surname];
+
+    [_tableDataSource addPersonObject:person];
+}
 @end

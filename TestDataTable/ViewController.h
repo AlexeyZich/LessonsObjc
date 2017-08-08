@@ -7,9 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TableDataSource.h"
 
 @interface ViewController : NSViewController
-
+- (IBAction)add:(id)sender;
+@property (weak) IBOutlet NSTextField *name;
+@property (strong) IBOutlet TableDataSource *tableDataSource;
 
 @end
 
