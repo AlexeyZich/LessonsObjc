@@ -718,7 +718,7 @@
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="MwB-yf-FVC">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Text Cell" id="MwB-yf-FVC">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -792,6 +792,8 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="7Xh-VY-YN5" customClass="TableDataSource">
                     <connections>
+                        <outlet property="changeName" destination="5Q2-sa-7kY" id="cnb-1j-nFi"/>
+                        <outlet property="changeSurname" destination="MwB-yf-FVC" id="46F-DX-yMD"/>
                         <outlet property="tableView" destination="Zub-XB-np1" id="xPc-XZ-hiy"/>
                     </connections>
                 </customObject>
