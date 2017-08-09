@@ -40,16 +40,23 @@
     if (namesCount >= 2) {
         name = names[0];
         surname = names[1];
-    } else if (namesCount == 1) {
+    }
+    else if (namesCount == 1) {
         name = names[0];
         surname = @"";
-    } else if (namesCount == 0){
-        NSLog(@"Ошибка");
+    }
+    else if(namesCount == 0) {
+        NSLog(@"Error");
     }
 
     [person setName: name];
     [person setSurname: surname];
 
     [_tableDataSource addPersonObject:person];
+}
+- (IBAction)delete:(id)sender {
+    NSLog(@"%ld", (long)[_tableView selectedRow]);
+    long row = (long)[_tableView selectedRow];
+    [_tableDataSource deletePersonObjectatIndex:row];
 }
 @end

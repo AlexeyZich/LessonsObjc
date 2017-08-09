@@ -12,12 +12,15 @@
 
 @interface TableDataSource : NSObject <NSTableViewDataSource, NSTableViewDelegate>
 @property (weak) IBOutlet NSTableView *tableView;
-- (IBAction)changeName:(id)sender;
-- (IBAction)changeSurname:(id)sender;
+@property (weak) IBOutlet NSTextFieldCell *changeName;
+@property (weak) IBOutlet NSTextFieldCell *changeSurname;
 
 @property (nonatomic, strong) NSMutableArray* persons;
+//@property NSInteger *row;
 
 - (TableDataSource*) init;
 - (void) addPersonObject: (Person*) person;
+- (void) changePersonObject:(Person*) person atIndex:(unsigned long) row;
+- (void) deletePersonObjectatIndex:(unsigned long) row;
 
 @end
