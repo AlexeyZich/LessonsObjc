@@ -28,6 +28,10 @@
     [_tableView reloadData];
 }
 
+- (void) deletePersonObjectatIndex:(unsigned long) row {
+    [_persons removeObjectAtIndex:row];
+    [_tableView reloadData];
+}
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return [_persons count];
 }
@@ -35,25 +39,35 @@
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     if ([tableColumn.identifier isEqualToString:@"names"]) {
         return [[_persons objectAtIndex:row] name];
-    } else if ([tableColumn.identifier isEqualToString:@"surnames"]) {
+    }
+    else if ([tableColumn.identifier isEqualToString:@"surnames"]) {
         return [[_persons objectAtIndex:row] surname];
-    } else {
+    }
+    else {
         return @"";
     }
 }
+//
+//- (void) tableViewSelectionDidChange:(NSNotification *)notification {
+//    NSLog(@"%ld", (long)[_tableView selectedRow]);
+//}
 
 
 - (void)tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    Person *person = [[Person alloc] init];
+    
+    Person *prevPerson = [_persons objectAtIndex:row];
+    
     if([[tableColumn identifier] isEqualToString:@"names"]) {
-        Person *person = [[Person alloc] init];
-        [person setName:object];
-        [self changePersonObject:person atIndex:row];
+        [person setName: object];
+        [person setSurname: [prevPerson surname]];
+        
+    } else if ([[tableColumn identifier] isEqualToString:@"surnames"]) {
+        [person setName: [prevPerson name]];
+        [person setSurname: object];
     }
-    else if ([[tableColumn identifier] isEqualToString:@"surnames"]){
-        Person *person = [[Person alloc] init];
-        [person setSurname:object];
-        [self changePersonObject:person atIndex:row];
-    }
+
+    [self changePersonObject:person atIndex:row];
 }
 
 @end

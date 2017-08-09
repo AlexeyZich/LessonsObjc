@@ -13,6 +13,8 @@
 - (IBAction)add:(id)sender;
 @property (weak) IBOutlet NSTextField *name;
 @property (strong) IBOutlet TableDataSource *tableDataSource;
+- (IBAction)delete:(id)sender;
+@property (weak) IBOutlet NSTableView *tableView;
 
 @end
 

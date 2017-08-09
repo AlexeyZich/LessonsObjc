@@ -16,9 +16,11 @@
 @property (weak) IBOutlet NSTextFieldCell *changeSurname;
 
 @property (nonatomic, strong) NSMutableArray* persons;
+//@property NSInteger *row;
 
 - (TableDataSource*) init;
 - (void) addPersonObject: (Person*) person;
 - (void) changePersonObject:(Person*) person atIndex:(unsigned long) row;
+- (void) deletePersonObjectatIndex:(unsigned long) row;
 
 @end

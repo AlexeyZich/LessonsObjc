@@ -693,7 +693,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="OeR-IG-PJE" id="Zub-XB-np1">
-                                            <rect key="frame" x="0.0" y="0.0" width="278" height="176"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="279" height="176"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -712,13 +712,13 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="surnames" width="135" minWidth="10" maxWidth="3.4028234663852886e+38" id="kmp-rd-Gt4">
+                                                <tableColumn identifier="surnames" width="136" minWidth="10" maxWidth="3.4028234663852886e+38" id="77G-NK-do3">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Text Cell" id="MwB-yf-FVC">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="nIL-eV-OyL">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -736,8 +736,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="WeF-ch-cUJ"/>
                                 </constraints>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="mKc-au-aEh">
-                                    <rect key="frame" x="1" y="213" width="278" height="16"/>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="mKc-au-aEh">
+                                    <rect key="frame" x="1" y="183" width="278" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="IoV-nM-DT9">
@@ -745,7 +745,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" id="OeR-IG-PJE">
-                                    <rect key="frame" x="0.0" y="0.0" width="278" height="23"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="279" height="23"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
@@ -770,6 +770,17 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yYA-aG-WPA">
+                                <rect key="frame" x="320" y="159" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="i6Y-0C-o7k">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="delete:" target="XfG-lQ-9wD" id="fAd-1l-taG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Iip-Vg-dZa" secondAttribute="bottom" constant="20" id="8Ao-9U-HDc"/>
@@ -787,13 +798,13 @@
                     <connections>
                         <outlet property="name" destination="i7e-VR-XUn" id="1IK-wl-Sxz"/>
                         <outlet property="tableDataSource" destination="7Xh-VY-YN5" id="UBe-3f-dcO"/>
+                        <outlet property="tableView" destination="Zub-XB-np1" id="u49-oF-9RO"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="7Xh-VY-YN5" customClass="TableDataSource">
                     <connections>
                         <outlet property="changeName" destination="5Q2-sa-7kY" id="cnb-1j-nFi"/>
-                        <outlet property="changeSurname" destination="MwB-yf-FVC" id="46F-DX-yMD"/>
                         <outlet property="tableView" destination="Zub-XB-np1" id="xPc-XZ-hiy"/>
                     </connections>
                 </customObject>
