@@ -47,10 +47,6 @@
         return @"";
     }
 }
-//
-//- (void) tableViewSelectionDidChange:(NSNotification *)notification {
-//    NSLog(@"%ld", (long)[_tableView selectedRow]);
-//}
 
 
 - (void)tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
@@ -59,12 +55,26 @@
     Person *prevPerson = [_persons objectAtIndex:row];
     
     if([[tableColumn identifier] isEqualToString:@"names"]) {
-        [person setName: object];
-        [person setSurname: [prevPerson surname]];
+        if(![person checkEmptyName:object]) {
+            [person setName: object];
+            [person setSurname: [prevPerson surname]];
+        }
+        else {
+            [person setName:[prevPerson name]];
+            [person setSurname:[prevPerson surname]];
+            NSLog(@"Name can not be empty");
+        }
         
     } else if ([[tableColumn identifier] isEqualToString:@"surnames"]) {
-        [person setName: [prevPerson name]];
-        [person setSurname: object];
+        if(![person checkEmptyName:object]) {
+            [person setName: [prevPerson name]];
+            [person setSurname: object];
+        }
+        else {
+            [person setName:[prevPerson name]];
+            [person setSurname:[prevPerson surname]];
+            NSLog(@"Surname can not be empty");
+        }
     }
 
     [self changePersonObject:person atIndex:row];

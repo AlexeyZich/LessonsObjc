@@ -10,4 +10,12 @@
 
 @implementation Person
 
+- (BOOL) checkEmptyName:(NSString *)fullName {
+    NSCharacterSet *set = [NSCharacterSet whitespaceCharacterSet];
+    if([[fullName stringByTrimmingCharactersInSet: set] length] == 0) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
 @end

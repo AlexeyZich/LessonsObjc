@@ -14,6 +14,7 @@
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSTextFieldCell *changeName;
 @property (weak) IBOutlet NSTextFieldCell *changeSurname;
+@property BOOL;
 
 @property (nonatomic, strong) NSMutableArray* persons;
 //@property NSInteger *row;

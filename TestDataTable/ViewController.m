@@ -32,31 +32,39 @@
 
     NSArray *names = [fullName componentsSeparatedByString:@" "];
     
-    NSInteger namesCount = [names count];
+    unsigned long namesCount = [names count];
     
     NSString *name;
     NSString *surname;
+    if ([person checkEmptyName:fullName]) {
+        NSLog(@"Name is empty");
+    } else {
     
-    if (namesCount >= 2) {
-        name = names[0];
-        surname = names[1];
+        if (namesCount >= 2) {
+            name = names[0];
+            if(![person checkEmptyName:names[1]]) {
+                surname = names[1];
+                [person setName: name];
+                [person setSurname: surname];
+                [_tableDataSource addPersonObject:person];
+            }
+            else {
+                NSLog(@"Error");
+            }
+        }
     }
-    else if (namesCount == 1) {
-        name = names[0];
-        surname = @"";
-    }
-    else if(namesCount == 0) {
-        NSLog(@"Error");
-    }
-
-    [person setName: name];
-    [person setSurname: surname];
-
-    [_tableDataSource addPersonObject:person];
 }
 - (IBAction)delete:(id)sender {
     NSLog(@"%ld", (long)[_tableView selectedRow]);
     long row = (long)[_tableView selectedRow];
-    [_tableDataSource deletePersonObjectatIndex:row];
+    @try {
+        [_tableDataSource deletePersonObjectatIndex:row];
+    } @catch (NSException *exception) {
+        NSLog(@"%@", exception);
+    } @finally {
+        NSLog(@"finaly");
+    }
+    
+
 }
 @end
